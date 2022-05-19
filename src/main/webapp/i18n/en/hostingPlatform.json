@@ -1,0 +1,26 @@
+{
+  "jhipsterSampleApplicationBisApp": {
+    "hostingPlatform": {
+      "home": {
+        "title": "Hosting Platforms",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Hosting Platform",
+        "createOrEditLabel": "Create or edit a Hosting Platform",
+        "notFound": "No Hosting Platforms found"
+      },
+      "created": "A new Hosting Platform is created with identifier {{ param }}",
+      "updated": "A Hosting Platform is updated with identifier {{ param }}",
+      "deleted": "A Hosting Platform is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Hosting Platform {{ id }}?"
+      },
+      "detail": {
+        "title": "Hosting Platform"
+      },
+      "id": "ID",
+      "name": "Name",
+      "hosting": "Hosting",
+      "hostingType": "Hosting Type"
+    }
+  }
+}

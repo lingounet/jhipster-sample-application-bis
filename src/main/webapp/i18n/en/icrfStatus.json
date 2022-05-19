@@ -1,0 +1,25 @@
+{
+  "jhipsterSampleApplicationBisApp": {
+    "icrfStatus": {
+      "home": {
+        "title": "Icrf Statuses",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Icrf Status",
+        "createOrEditLabel": "Create or edit a Icrf Status",
+        "notFound": "No Icrf Statuses found"
+      },
+      "created": "A new Icrf Status is created with identifier {{ param }}",
+      "updated": "A Icrf Status is updated with identifier {{ param }}",
+      "deleted": "A Icrf Status is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Icrf Status {{ id }}?"
+      },
+      "detail": {
+        "title": "Icrf Status"
+      },
+      "id": "ID",
+      "name": "Name",
+      "icrf": "Icrf"
+    }
+  }
+}

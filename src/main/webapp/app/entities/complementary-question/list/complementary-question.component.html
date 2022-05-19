@@ -1,0 +1,102 @@
+<div>
+  <h2 id="page-heading" data-cy="ComplementaryQuestionHeading">
+    <span jhiTranslate="jhipsterSampleApplicationBisApp.complementaryQuestion.home.title">Complementary Questions</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="jhipsterSampleApplicationBisApp.complementaryQuestion.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-complementary-question"
+        [routerLink]="['/complementary-question/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="jhipsterSampleApplicationBisApp.complementaryQuestion.home.createLabel">
+          Create a new Complementary Question
+        </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="complementaryQuestions?.length === 0">
+    <span jhiTranslate="jhipsterSampleApplicationBisApp.complementaryQuestion.home.notFound">No complementaryQuestions found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="complementaryQuestions && complementaryQuestions.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <th scope="col"><span jhiTranslate="global.field.id">ID</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationBisApp.complementaryQuestion.internet">Internet</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationBisApp.complementaryQuestion.development">Development</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationBisApp.complementaryQuestion.configuration">Configuration</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationBisApp.complementaryQuestion.cloud">Cloud</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationBisApp.complementaryQuestion.internal">Internal</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationBisApp.complementaryQuestion.partner">Partner</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationBisApp.complementaryQuestion.users">Users</span></th>
+          <th scope="col">
+            <span jhiTranslate="jhipsterSampleApplicationBisApp.complementaryQuestion.securityInterview">Security Interview</span>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let complementaryQuestion of complementaryQuestions; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/complementary-question', complementaryQuestion.id, 'view']">{{ complementaryQuestion.id }}</a>
+          </td>
+          <td>{{ complementaryQuestion.internet }}</td>
+          <td>{{ complementaryQuestion.development }}</td>
+          <td>{{ complementaryQuestion.configuration }}</td>
+          <td>{{ complementaryQuestion.cloud }}</td>
+          <td>{{ complementaryQuestion.internal }}</td>
+          <td>{{ complementaryQuestion.partner }}</td>
+          <td>{{ complementaryQuestion.users }}</td>
+          <td>
+            <div *ngIf="complementaryQuestion.securityInterview">
+              <a [routerLink]="['/security-interview', complementaryQuestion.securityInterview?.id, 'view']">{{
+                complementaryQuestion.securityInterview?.id
+              }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/complementary-question', complementaryQuestion.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/complementary-question', complementaryQuestion.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(complementaryQuestion)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

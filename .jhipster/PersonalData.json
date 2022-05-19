@@ -1,0 +1,33 @@
+{
+  "applications": "*",
+  "changelogDate": "20220519120900",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "personal_data",
+  "fields": [
+    {
+      "fieldName": "date",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "PersonalData",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "personalDataType",
+      "otherEntityRelationshipName": "personalData",
+      "relationshipName": "personalDataType",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "securityInterview",
+      "otherEntityRelationshipName": "personalData",
+      "relationshipName": "securityInterview",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}
