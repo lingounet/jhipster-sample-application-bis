@@ -48,6 +48,33 @@ public class CacheConfiguration {
             createCache(cm, com.mycompany.myapp.domain.User.class.getName());
             createCache(cm, com.mycompany.myapp.domain.Authority.class.getName());
             createCache(cm, com.mycompany.myapp.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.mycompany.myapp.domain.Aml.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.ApplicationType.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.HostingType.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.HostingType.class.getName() + ".hostingPlatforms");
+            createCache(cm, com.mycompany.myapp.domain.HostingPlatform.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.HostingPlatform.class.getName() + ".hostings");
+            createCache(cm, com.mycompany.myapp.domain.PersonalDataRegion.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.PersonalDataRegion.class.getName() + ".personalDataTypes");
+            createCache(cm, com.mycompany.myapp.domain.PersonalDataType.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.PersonalDataType.class.getName() + ".personalData");
+            createCache(cm, com.mycompany.myapp.domain.IcrfStatus.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.Icrf.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.SensitiveDataType.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.SensitiveDataType.class.getName() + ".sensitiveData");
+            createCache(cm, com.mycompany.myapp.domain.Psat.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.SecurityInterview.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.SecurityInterview.class.getName() + ".applicationTypes");
+            createCache(cm, com.mycompany.myapp.domain.SecurityInterview.class.getName() + ".hostings");
+            createCache(cm, com.mycompany.myapp.domain.SecurityInterview.class.getName() + ".personalData");
+            createCache(cm, com.mycompany.myapp.domain.SecurityInterview.class.getName() + ".icrfs");
+            createCache(cm, com.mycompany.myapp.domain.SecurityInterview.class.getName() + ".sensitiveData");
+            createCache(cm, com.mycompany.myapp.domain.SecurityInterview.class.getName() + ".complementaryQuestions");
+            createCache(cm, com.mycompany.myapp.domain.Hosting.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.PersonalData.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.SensitiveData.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.Availability.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.ComplementaryQuestion.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

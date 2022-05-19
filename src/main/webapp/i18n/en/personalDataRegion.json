@@ -1,0 +1,25 @@
+{
+  "jhipsterSampleApplicationBisApp": {
+    "personalDataRegion": {
+      "home": {
+        "title": "Personal Data Regions",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Personal Data Region",
+        "createOrEditLabel": "Create or edit a Personal Data Region",
+        "notFound": "No Personal Data Regions found"
+      },
+      "created": "A new Personal Data Region is created with identifier {{ param }}",
+      "updated": "A Personal Data Region is updated with identifier {{ param }}",
+      "deleted": "A Personal Data Region is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Personal Data Region {{ id }}?"
+      },
+      "detail": {
+        "title": "Personal Data Region"
+      },
+      "id": "ID",
+      "name": "Name",
+      "personalDataType": "Personal Data Type"
+    }
+  }
+}
