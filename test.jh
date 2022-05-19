@@ -1,0 +1,121 @@
+
+
+entity Aml {
+	name String   
+}
+
+enum Status {
+	DRAFT, SECURITY_INTERVIEW, RISK_ANALYSIS, COMPLIANCE_CHECK, DONE
+}
+
+enum Criticality {
+	LOW, MODERATE, HIGH, CRITICAL
+}
+
+enum Process {
+	LIGHT, CLASSIC
+}
+
+
+entity ApplicationType {
+	name String
+}
+
+entity HostingType {
+	name String
+}
+
+entity HostingPlatform {
+	name String
+}
+
+entity PersonalDataRegion {
+	name String
+}
+
+entity PersonalDataType {
+	name String
+}
+
+entity IcrfStatus {
+	name String
+}
+
+entity Icrf {
+	code String
+    description String
+}
+
+entity SensitiveDataType {
+	name String
+}
+
+//==============================
+
+entity Psat {
+	amlId String
+    owner String
+    status Status   
+}
+
+entity SecurityInterview {
+	applicationName String
+    so String  
+    process Process
+}
+
+entity Hosting {
+	date Instant
+}
+
+entity PersonalData {
+	date Instant
+}
+
+entity SensitiveData {
+	date Instant
+}
+
+entity Availability {
+	financial Criticality
+    legal Criticality
+    image Criticality
+    strategy Criticality
+    operational Criticality
+    traceability Text
+    confidentiality Text
+    integrity Text
+    critical Boolean
+}
+
+entity ComplementaryQuestion {
+	internet Boolean
+    development Boolean
+    configuration Boolean
+    cloud Boolean
+    internal Boolean
+    partner Boolean
+    users Integer
+}
+
+relationship OneToOne {
+	Psat to SecurityInterview
+    Icrf to IcrfStatus
+    SecurityInterview to Availability
+}
+
+relationship OneToMany {
+	HostingType to HostingPlatform{hostingType}
+    PersonalDataRegion to PersonalDataType{personalDataRegion}
+    
+    HostingPlatform to Hosting{hostingPlaform}
+    PersonalDataType to PersonalData{personalDataType}
+    SensitiveDataType to SensitiveData{sensitiveDataType}
+    
+    SecurityInterview to ApplicationType{securityInterview}
+    SecurityInterview to Hosting{securityInterview}
+    SecurityInterview to PersonalData{securityInterview}
+    SecurityInterview to Icrf{securityInterview}
+    SecurityInterview to SensitiveData{securityInterview}
+    SecurityInterview to ComplementaryQuestion{securityInterview}
+}
