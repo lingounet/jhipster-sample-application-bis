@@ -1,0 +1,238 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-availability-heading"
+        data-cy="AvailabilityCreateUpdateHeading"
+        jhiTranslate="jhipsterSampleApplicationBisApp.availability.home.createOrEditLabel"
+      >
+        Create or edit a Availability
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationBisApp.availability.financial" for="field_financial"
+            >Financial</label
+          >
+          <select class="form-control" name="financial" formControlName="financial" id="field_financial" data-cy="financial">
+            <option [ngValue]="null">{{ 'jhipsterSampleApplicationBisApp.Criticality.null' | translate }}</option>
+            <option *ngFor="let criticality of criticalityValues" [value]="criticality">
+              {{ 'jhipsterSampleApplicationBisApp.Criticality.' + criticality | translate }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationBisApp.availability.legal" for="field_legal">Legal</label>
+          <select class="form-control" name="legal" formControlName="legal" id="field_legal" data-cy="legal">
+            <option [ngValue]="null">{{ 'jhipsterSampleApplicationBisApp.Criticality.null' | translate }}</option>
+            <option *ngFor="let criticality of criticalityValues" [value]="criticality">
+              {{ 'jhipsterSampleApplicationBisApp.Criticality.' + criticality | translate }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationBisApp.availability.image" for="field_image">Image</label>
+          <select class="form-control" name="image" formControlName="image" id="field_image" data-cy="image">
+            <option [ngValue]="null">{{ 'jhipsterSampleApplicationBisApp.Criticality.null' | translate }}</option>
+            <option *ngFor="let criticality of criticalityValues" [value]="criticality">
+              {{ 'jhipsterSampleApplicationBisApp.Criticality.' + criticality | translate }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationBisApp.availability.strategy" for="field_strategy"
+            >Strategy</label
+          >
+          <select class="form-control" name="strategy" formControlName="strategy" id="field_strategy" data-cy="strategy">
+            <option [ngValue]="null">{{ 'jhipsterSampleApplicationBisApp.Criticality.null' | translate }}</option>
+            <option *ngFor="let criticality of criticalityValues" [value]="criticality">
+              {{ 'jhipsterSampleApplicationBisApp.Criticality.' + criticality | translate }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationBisApp.availability.operational" for="field_operational"
+            >Operational</label
+          >
+          <select class="form-control" name="operational" formControlName="operational" id="field_operational" data-cy="operational">
+            <option [ngValue]="null">{{ 'jhipsterSampleApplicationBisApp.Criticality.null' | translate }}</option>
+            <option *ngFor="let criticality of criticalityValues" [value]="criticality">
+              {{ 'jhipsterSampleApplicationBisApp.Criticality.' + criticality | translate }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationBisApp.availability.traceability" for="field_traceability"
+            >Traceability</label
+          >
+          <div>
+            <div *ngIf="editForm.get('traceability')!.value" class="form-text text-danger clearfix">
+              <a
+                class="pull-start"
+                (click)="openFile(editForm.get('traceability')!.value, editForm.get('traceabilityContentType')!.value)"
+                jhiTranslate="entity.action.open"
+                >open</a
+              ><br />
+              <span class="pull-start"
+                >{{ editForm.get('traceabilityContentType')!.value }}, {{ byteSize(editForm.get('traceability')!.value) }}</span
+              >
+              <button
+                type="button"
+                (click)="editForm.patchValue({ traceability: null }); editForm.patchValue({ traceabilityContentType: null })"
+                class="btn btn-secondary btn-xs pull-end"
+              >
+                <fa-icon icon="times"></fa-icon>
+              </button>
+            </div>
+            <input
+              type="file"
+              id="file_traceability"
+              data-cy="traceability"
+              (change)="setFileData($event, 'traceability', false)"
+              jhiTranslate="entity.action.addblob"
+            />
+          </div>
+          <input
+            type="hidden"
+            class="form-control"
+            name="traceability"
+            id="field_traceability"
+            data-cy="traceability"
+            formControlName="traceability"
+          />
+          <input
+            type="hidden"
+            class="form-control"
+            name="traceabilityContentType"
+            id="field_traceabilityContentType"
+            formControlName="traceabilityContentType"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationBisApp.availability.confidentiality" for="field_confidentiality"
+            >Confidentiality</label
+          >
+          <div>
+            <div *ngIf="editForm.get('confidentiality')!.value" class="form-text text-danger clearfix">
+              <a
+                class="pull-start"
+                (click)="openFile(editForm.get('confidentiality')!.value, editForm.get('confidentialityContentType')!.value)"
+                jhiTranslate="entity.action.open"
+                >open</a
+              ><br />
+              <span class="pull-start"
+                >{{ editForm.get('confidentialityContentType')!.value }}, {{ byteSize(editForm.get('confidentiality')!.value) }}</span
+              >
+              <button
+                type="button"
+                (click)="editForm.patchValue({ confidentiality: null }); editForm.patchValue({ confidentialityContentType: null })"
+                class="btn btn-secondary btn-xs pull-end"
+              >
+                <fa-icon icon="times"></fa-icon>
+              </button>
+            </div>
+            <input
+              type="file"
+              id="file_confidentiality"
+              data-cy="confidentiality"
+              (change)="setFileData($event, 'confidentiality', false)"
+              jhiTranslate="entity.action.addblob"
+            />
+          </div>
+          <input
+            type="hidden"
+            class="form-control"
+            name="confidentiality"
+            id="field_confidentiality"
+            data-cy="confidentiality"
+            formControlName="confidentiality"
+          />
+          <input
+            type="hidden"
+            class="form-control"
+            name="confidentialityContentType"
+            id="field_confidentialityContentType"
+            formControlName="confidentialityContentType"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationBisApp.availability.integrity" for="field_integrity"
+            >Integrity</label
+          >
+          <div>
+            <div *ngIf="editForm.get('integrity')!.value" class="form-text text-danger clearfix">
+              <a
+                class="pull-start"
+                (click)="openFile(editForm.get('integrity')!.value, editForm.get('integrityContentType')!.value)"
+                jhiTranslate="entity.action.open"
+                >open</a
+              ><br />
+              <span class="pull-start"
+                >{{ editForm.get('integrityContentType')!.value }}, {{ byteSize(editForm.get('integrity')!.value) }}</span
+              >
+              <button
+                type="button"
+                (click)="editForm.patchValue({ integrity: null }); editForm.patchValue({ integrityContentType: null })"
+                class="btn btn-secondary btn-xs pull-end"
+              >
+                <fa-icon icon="times"></fa-icon>
+              </button>
+            </div>
+            <input
+              type="file"
+              id="file_integrity"
+              data-cy="integrity"
+              (change)="setFileData($event, 'integrity', false)"
+              jhiTranslate="entity.action.addblob"
+            />
+          </div>
+          <input type="hidden" class="form-control" name="integrity" id="field_integrity" data-cy="integrity" formControlName="integrity" />
+          <input
+            type="hidden"
+            class="form-control"
+            name="integrityContentType"
+            id="field_integrityContentType"
+            formControlName="integrityContentType"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationBisApp.availability.critical" for="field_critical"
+            >Critical</label
+          >
+          <input type="checkbox" class="form-check" name="critical" id="field_critical" data-cy="critical" formControlName="critical" />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

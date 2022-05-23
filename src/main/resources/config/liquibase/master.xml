@@ -15,7 +15,32 @@
     <property name="datetimeType" value="datetime" dbms="oracle, mssql, postgresql, h2"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220523140430_added_entity_Aml.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220523140431_added_entity_ApplicationType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220523140432_added_entity_HostingType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220523140433_added_entity_HostingPlatform.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220523140434_added_entity_PersonalDataRegion.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220523140435_added_entity_PersonalDataType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220523140436_added_entity_IcrfStatus.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220523140437_added_entity_Icrf.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220523140438_added_entity_SensitiveDataType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220523140439_added_entity_Psat.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220523140440_added_entity_SecurityInterview.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220523140441_added_entity_Hosting.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220523140442_added_entity_PersonalData.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220523140443_added_entity_SensitiveData.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220523140444_added_entity_Availability.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220523140445_added_entity_ComplementaryQuestion.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20220523140431_added_entity_constraints_ApplicationType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220523140433_added_entity_constraints_HostingPlatform.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220523140435_added_entity_constraints_PersonalDataType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220523140437_added_entity_constraints_Icrf.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220523140440_added_entity_constraints_SecurityInterview.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220523140441_added_entity_constraints_Hosting.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220523140442_added_entity_constraints_PersonalData.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220523140443_added_entity_constraints_SensitiveData.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220523140445_added_entity_constraints_ComplementaryQuestion.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
 </databaseChangeLog>

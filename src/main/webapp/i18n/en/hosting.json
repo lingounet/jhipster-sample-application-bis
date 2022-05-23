@@ -1,0 +1,26 @@
+{
+  "jhipsterSampleApplicationBisApp": {
+    "hosting": {
+      "home": {
+        "title": "Hostings",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Hosting",
+        "createOrEditLabel": "Create or edit a Hosting",
+        "notFound": "No Hostings found"
+      },
+      "created": "A new Hosting is created with identifier {{ param }}",
+      "updated": "A Hosting is updated with identifier {{ param }}",
+      "deleted": "A Hosting is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Hosting {{ id }}?"
+      },
+      "detail": {
+        "title": "Hosting"
+      },
+      "id": "ID",
+      "date": "Date",
+      "hostingPlaform": "Hosting Plaform",
+      "securityInterview": "Security Interview"
+    }
+  }
+}
