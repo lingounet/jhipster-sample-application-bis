@@ -1,0 +1,48 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="icrf">
+      <h2 data-cy="icrfDetailsHeading"><span jhiTranslate="jhipsterSampleApplicationBisApp.icrf.detail.title">Icrf</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ icrf.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationBisApp.icrf.code">Code</span></dt>
+        <dd>
+          <span>{{ icrf.code }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationBisApp.icrf.description">Description</span></dt>
+        <dd>
+          <span>{{ icrf.description }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationBisApp.icrf.icrfStatus">Icrf Status</span></dt>
+        <dd>
+          <div *ngIf="icrf.icrfStatus">
+            <a [routerLink]="['/icrf-status', icrf.icrfStatus?.id, 'view']">{{ icrf.icrfStatus?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationBisApp.icrf.securityInterview">Security Interview</span></dt>
+        <dd>
+          <div *ngIf="icrf.securityInterview">
+            <a [routerLink]="['/security-interview', icrf.securityInterview?.id, 'view']">{{ icrf.securityInterview?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/icrf', icrf.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

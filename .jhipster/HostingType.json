@@ -1,0 +1,27 @@
+{
+  "applications": "*",
+  "changelogDate": "20220523124806",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "hosting_type",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "HostingType",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "hostingPlatform",
+      "otherEntityRelationshipName": "hostingType",
+      "relationshipName": "hostingPlatform",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

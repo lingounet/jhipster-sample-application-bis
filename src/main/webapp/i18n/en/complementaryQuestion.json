@@ -1,0 +1,31 @@
+{
+  "jhipsterSampleApplicationBisApp": {
+    "complementaryQuestion": {
+      "home": {
+        "title": "Complementary Questions",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Complementary Question",
+        "createOrEditLabel": "Create or edit a Complementary Question",
+        "notFound": "No Complementary Questions found"
+      },
+      "created": "A new Complementary Question is created with identifier {{ param }}",
+      "updated": "A Complementary Question is updated with identifier {{ param }}",
+      "deleted": "A Complementary Question is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Complementary Question {{ id }}?"
+      },
+      "detail": {
+        "title": "Complementary Question"
+      },
+      "id": "ID",
+      "internet": "Internet",
+      "development": "Development",
+      "configuration": "Configuration",
+      "cloud": "Cloud",
+      "internal": "Internal",
+      "partner": "Partner",
+      "users": "Users",
+      "securityInterview": "Security Interview"
+    }
+  }
+}
