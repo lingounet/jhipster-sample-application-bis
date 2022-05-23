@@ -1,0 +1,85 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="availability">
+      <h2 data-cy="availabilityDetailsHeading">
+        <span jhiTranslate="jhipsterSampleApplicationBisApp.availability.detail.title">Availability</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ availability.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationBisApp.availability.financial">Financial</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'jhipsterSampleApplicationBisApp.Criticality.' + availability.financial }}">{{
+            availability.financial
+          }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationBisApp.availability.legal">Legal</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'jhipsterSampleApplicationBisApp.Criticality.' + availability.legal }}">{{ availability.legal }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationBisApp.availability.image">Image</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'jhipsterSampleApplicationBisApp.Criticality.' + availability.image }}">{{ availability.image }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationBisApp.availability.strategy">Strategy</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'jhipsterSampleApplicationBisApp.Criticality.' + availability.strategy }}">{{
+            availability.strategy
+          }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationBisApp.availability.operational">Operational</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'jhipsterSampleApplicationBisApp.Criticality.' + availability.operational }}">{{
+            availability.operational
+          }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationBisApp.availability.traceability">Traceability</span></dt>
+        <dd>
+          <div *ngIf="availability.traceability">
+            <a (click)="openFile(availability.traceability, availability.traceabilityContentType)" jhiTranslate="entity.action.open"
+              >open</a
+            >
+            {{ availability.traceabilityContentType }}, {{ byteSize(availability.traceability) }}
+          </div>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationBisApp.availability.confidentiality">Confidentiality</span></dt>
+        <dd>
+          <div *ngIf="availability.confidentiality">
+            <a (click)="openFile(availability.confidentiality, availability.confidentialityContentType)" jhiTranslate="entity.action.open"
+              >open</a
+            >
+            {{ availability.confidentialityContentType }}, {{ byteSize(availability.confidentiality) }}
+          </div>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationBisApp.availability.integrity">Integrity</span></dt>
+        <dd>
+          <div *ngIf="availability.integrity">
+            <a (click)="openFile(availability.integrity, availability.integrityContentType)" jhiTranslate="entity.action.open">open</a>
+            {{ availability.integrityContentType }}, {{ byteSize(availability.integrity) }}
+          </div>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationBisApp.availability.critical">Critical</span></dt>
+        <dd>
+          <span>{{ availability.critical }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/availability', availability.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+{
+  "jhipsterSampleApplicationBisApp": {
+    "sensitiveData": {
+      "home": {
+        "title": "Sensitive Data",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Sensitive Data",
+        "createOrEditLabel": "Create or edit a Sensitive Data",
+        "notFound": "No Sensitive Data found"
+      },
+      "created": "A new Sensitive Data is created with identifier {{ param }}",
+      "updated": "A Sensitive Data is updated with identifier {{ param }}",
+      "deleted": "A Sensitive Data is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Sensitive Data {{ id }}?"
+      },
+      "detail": {
+        "title": "Sensitive Data"
+      },
+      "id": "ID",
+      "date": "Date",
+      "sensitiveDataType": "Sensitive Data Type",
+      "securityInterview": "Security Interview"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "applications": "*",
+  "changelogDate": "20220523141103",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "sensitive_data",
+  "fields": [
+    {
+      "fieldName": "date",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "SensitiveData",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "sensitiveDataType",
+      "otherEntityRelationshipName": "sensitiveData",
+      "relationshipName": "sensitiveDataType",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "securityInterview",
+      "otherEntityRelationshipName": "sensitiveData",
+      "relationshipName": "securityInterview",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

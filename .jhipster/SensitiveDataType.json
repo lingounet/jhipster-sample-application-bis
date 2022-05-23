@@ -1,0 +1,27 @@
+{
+  "applications": "*",
+  "changelogDate": "20220523141058",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "sensitive_data_type",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "SensitiveDataType",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "sensitiveData",
+      "otherEntityRelationshipName": "sensitiveDataType",
+      "relationshipName": "sensitiveData",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

@@ -1,0 +1,9 @@
+{
+  "jhipsterSampleApplicationBisApp": {
+    "Process": {
+      "null": "",
+      "LIGHT": "LIGHT",
+      "CLASSIC": "CLASSIC"
+    }
+  }
+}

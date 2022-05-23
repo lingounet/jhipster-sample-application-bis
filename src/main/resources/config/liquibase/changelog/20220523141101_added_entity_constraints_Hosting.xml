@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity Hosting.
+    -->
+    <changeSet id="20220523141101-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="hosting_plaform_id"
+                                 baseTableName="hosting"
+                                 constraintName="fk_hosting__hosting_plaform_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="hosting_platform"/>
+
+        <addForeignKeyConstraint baseColumnNames="security_interview_id"
+                                 baseTableName="hosting"
+                                 constraintName="fk_hosting__security_interview_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="security_interview"/>
+    </changeSet>
+</databaseChangeLog>
