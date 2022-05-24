@@ -1,0 +1,46 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="personalData">
+      <h2 data-cy="personalDataDetailsHeading">
+        <span jhiTranslate="jhipsterSampleApplicationBisApp.personalData.detail.title">Personal Data</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ personalData.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationBisApp.personalData.date">Date</span></dt>
+        <dd>
+          <span>{{ personalData.date | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationBisApp.personalData.personalDataType">Personal Data Type</span></dt>
+        <dd>
+          <div *ngIf="personalData.personalDataType">
+            <a [routerLink]="['/personal-data-type', personalData.personalDataType?.id, 'view']">{{ personalData.personalDataType?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationBisApp.personalData.identity">Identity</span></dt>
+        <dd>
+          <div *ngIf="personalData.identity">
+            <a [routerLink]="['/identity', personalData.identity?.id, 'view']">{{ personalData.identity?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/personal-data', personalData.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

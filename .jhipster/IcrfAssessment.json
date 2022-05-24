@@ -1,0 +1,35 @@
+{
+  "applications": "*",
+  "changelogDate": "20220524125422",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "icrf_assessment",
+  "fields": [
+    {
+      "fieldName": "code",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Boolean"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "IcrfAssessment",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "icrf",
+      "otherEntityRelationshipName": "icrfAssessment",
+      "relationshipName": "icrf",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

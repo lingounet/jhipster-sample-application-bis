@@ -1,0 +1,33 @@
+{
+  "applications": "*",
+  "changelogDate": "20220524125427",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "personal_data",
+  "fields": [
+    {
+      "fieldName": "date",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "PersonalData",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "personalDataType",
+      "otherEntityRelationshipName": "personalData",
+      "relationshipName": "personalDataType",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "identity",
+      "otherEntityRelationshipName": "personalData",
+      "relationshipName": "identity",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

@@ -1,0 +1,33 @@
+{
+  "applications": "*",
+  "changelogDate": "20220524125428",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "icrf",
+  "fields": [
+    {
+      "fieldName": "date",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Icrf",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "icrfAssessment",
+      "otherEntityRelationshipName": "icrf",
+      "relationshipName": "icrfAssessment",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "identity",
+      "otherEntityRelationshipName": "icrf",
+      "relationshipName": "identity",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

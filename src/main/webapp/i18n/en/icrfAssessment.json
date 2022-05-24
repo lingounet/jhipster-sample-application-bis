@@ -1,0 +1,27 @@
+{
+  "jhipsterSampleApplicationBisApp": {
+    "icrfAssessment": {
+      "home": {
+        "title": "Icrf Assessments",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Icrf Assessment",
+        "createOrEditLabel": "Create or edit a Icrf Assessment",
+        "notFound": "No Icrf Assessments found"
+      },
+      "created": "A new Icrf Assessment is created with identifier {{ param }}",
+      "updated": "A Icrf Assessment is updated with identifier {{ param }}",
+      "deleted": "A Icrf Assessment is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Icrf Assessment {{ id }}?"
+      },
+      "detail": {
+        "title": "Icrf Assessment"
+      },
+      "id": "ID",
+      "code": "Code",
+      "description": "Description",
+      "status": "Status",
+      "icrf": "Icrf"
+    }
+  }
+}

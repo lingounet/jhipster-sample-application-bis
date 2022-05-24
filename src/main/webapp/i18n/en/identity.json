@@ -1,0 +1,34 @@
+{
+  "jhipsterSampleApplicationBisApp": {
+    "identity": {
+      "home": {
+        "title": "Identities",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Identity",
+        "createOrEditLabel": "Create or edit a Identity",
+        "notFound": "No Identities found"
+      },
+      "created": "A new Identity is created with identifier {{ param }}",
+      "updated": "A Identity is updated with identifier {{ param }}",
+      "deleted": "A Identity is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Identity {{ id }}?"
+      },
+      "detail": {
+        "title": "Identity"
+      },
+      "id": "ID",
+      "applicationName": "Application Name",
+      "so": "So",
+      "process": "Process",
+      "psat": "Psat",
+      "availability": "Availability",
+      "hosting": "Hosting",
+      "personalData": "Personal Data",
+      "icrf": "Icrf",
+      "sensitiveData": "Sensitive Data",
+      "complementaryQuestion": "Complementary Question",
+      "applicationType": "Application Type"
+    }
+  }
+}

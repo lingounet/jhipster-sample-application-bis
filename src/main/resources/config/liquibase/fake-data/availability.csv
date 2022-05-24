@@ -1,0 +1,11 @@
+id;financial;legal;image;strategy;operational;traceability;traceability_content_type;confidentiality;confidentiality_content_type;integrity;integrity_content_type;critical
+1;LOW;MODERATE;MODERATE;LOW;CRITICAL;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png;true
+2;CRITICAL;CRITICAL;LOW;MODERATE;LOW;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png;false
+3;CRITICAL;CRITICAL;LOW;MODERATE;HIGH;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png;true
+4;MODERATE;HIGH;MODERATE;LOW;MODERATE;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png;true
+5;MODERATE;HIGH;MODERATE;CRITICAL;HIGH;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png;false
+6;LOW;CRITICAL;CRITICAL;LOW;CRITICAL;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png;false
+7;LOW;CRITICAL;HIGH;LOW;LOW;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png;false
+8;HIGH;HIGH;HIGH;MODERATE;LOW;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png;false
+9;HIGH;LOW;CRITICAL;MODERATE;MODERATE;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png;false
+10;MODERATE;CRITICAL;HIGH;MODERATE;CRITICAL;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png;false

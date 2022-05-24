@@ -1,0 +1,26 @@
+{
+  "jhipsterSampleApplicationBisApp": {
+    "icrf": {
+      "home": {
+        "title": "Icrfs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Icrf",
+        "createOrEditLabel": "Create or edit a Icrf",
+        "notFound": "No Icrfs found"
+      },
+      "created": "A new Icrf is created with identifier {{ param }}",
+      "updated": "A Icrf is updated with identifier {{ param }}",
+      "deleted": "A Icrf is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Icrf {{ id }}?"
+      },
+      "detail": {
+        "title": "Icrf"
+      },
+      "id": "ID",
+      "date": "Date",
+      "icrfAssessment": "Icrf Assessment",
+      "identity": "Identity"
+    }
+  }
+}

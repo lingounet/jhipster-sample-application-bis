@@ -1,0 +1,25 @@
+{
+  "jhipsterSampleApplicationBisApp": {
+    "sensitiveDataType": {
+      "home": {
+        "title": "Sensitive Data Types",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Sensitive Data Type",
+        "createOrEditLabel": "Create or edit a Sensitive Data Type",
+        "notFound": "No Sensitive Data Types found"
+      },
+      "created": "A new Sensitive Data Type is created with identifier {{ param }}",
+      "updated": "A Sensitive Data Type is updated with identifier {{ param }}",
+      "deleted": "A Sensitive Data Type is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Sensitive Data Type {{ id }}?"
+      },
+      "detail": {
+        "title": "Sensitive Data Type"
+      },
+      "id": "ID",
+      "name": "Name",
+      "sensitiveData": "Sensitive Data"
+    }
+  }
+}

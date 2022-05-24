@@ -1,0 +1,48 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="sensitiveData">
+      <h2 data-cy="sensitiveDataDetailsHeading">
+        <span jhiTranslate="jhipsterSampleApplicationBisApp.sensitiveData.detail.title">Sensitive Data</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ sensitiveData.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationBisApp.sensitiveData.date">Date</span></dt>
+        <dd>
+          <span>{{ sensitiveData.date | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationBisApp.sensitiveData.sensitiveDataType">Sensitive Data Type</span></dt>
+        <dd>
+          <div *ngIf="sensitiveData.sensitiveDataType">
+            <a [routerLink]="['/sensitive-data-type', sensitiveData.sensitiveDataType?.id, 'view']">{{
+              sensitiveData.sensitiveDataType?.id
+            }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationBisApp.sensitiveData.identity">Identity</span></dt>
+        <dd>
+          <div *ngIf="sensitiveData.identity">
+            <a [routerLink]="['/identity', sensitiveData.identity?.id, 'view']">{{ sensitiveData.identity?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/sensitive-data', sensitiveData.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

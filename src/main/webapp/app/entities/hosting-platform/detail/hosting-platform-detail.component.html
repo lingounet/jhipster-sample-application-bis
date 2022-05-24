@@ -1,0 +1,40 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="hostingPlatform">
+      <h2 data-cy="hostingPlatformDetailsHeading">
+        <span jhiTranslate="jhipsterSampleApplicationBisApp.hostingPlatform.detail.title">Hosting Platform</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ hostingPlatform.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationBisApp.hostingPlatform.name">Name</span></dt>
+        <dd>
+          <span>{{ hostingPlatform.name }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationBisApp.hostingPlatform.hostingType">Hosting Type</span></dt>
+        <dd>
+          <div *ngIf="hostingPlatform.hostingType">
+            <a [routerLink]="['/hosting-type', hostingPlatform.hostingType?.id, 'view']">{{ hostingPlatform.hostingType?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/hosting-platform', hostingPlatform.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

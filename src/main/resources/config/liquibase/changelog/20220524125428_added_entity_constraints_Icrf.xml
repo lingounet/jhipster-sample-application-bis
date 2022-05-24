@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity Icrf.
+    -->
+    <changeSet id="20220524125428-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="icrf_assessment_id"
+                                 baseTableName="icrf"
+                                 constraintName="fk_icrf__icrf_assessment_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="icrf_assessment"/>
+
+        <addForeignKeyConstraint baseColumnNames="identity_id"
+                                 baseTableName="icrf"
+                                 constraintName="fk_icrf__identity_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="identity"/>
+    </changeSet>
+</databaseChangeLog>
