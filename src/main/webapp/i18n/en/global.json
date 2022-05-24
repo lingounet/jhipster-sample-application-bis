@@ -7,6 +7,22 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entities",
+        "aml": "Aml",
+        "applicationType": "Application Type",
+        "hostingType": "Hosting Type",
+        "hostingPlatform": "Hosting Platform",
+        "personalDataRegion": "Personal Data Region",
+        "personalDataType": "Personal Data Type",
+        "icrfStatus": "Icrf Status",
+        "icrf": "Icrf",
+        "sensitiveDataType": "Sensitive Data Type",
+        "psat": "Psat",
+        "securityInterview": "Security Interview",
+        "hosting": "Hosting",
+        "personalData": "Personal Data",
+        "sensitiveData": "Sensitive Data",
+        "availability": "Availability",
+        "complementaryQuestion": "Complementary Question",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

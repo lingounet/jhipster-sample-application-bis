@@ -1,0 +1,108 @@
+<div>
+  <h2 id="page-heading" data-cy="SecurityInterviewHeading">
+    <span jhiTranslate="jhipsterSampleApplicationBisApp.securityInterview.home.title">Security Interviews</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="jhipsterSampleApplicationBisApp.securityInterview.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-security-interview"
+        [routerLink]="['/security-interview/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="jhipsterSampleApplicationBisApp.securityInterview.home.createLabel"> Create a new Security Interview </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="securityInterviews?.length === 0">
+    <span jhiTranslate="jhipsterSampleApplicationBisApp.securityInterview.home.notFound">No securityInterviews found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="securityInterviews && securityInterviews.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <th scope="col"><span jhiTranslate="global.field.id">ID</span></th>
+          <th scope="col">
+            <span jhiTranslate="jhipsterSampleApplicationBisApp.securityInterview.applicationName">Application Name</span>
+          </th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationBisApp.securityInterview.so">So</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationBisApp.securityInterview.process">Process</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationBisApp.securityInterview.psat">Psat</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationBisApp.securityInterview.availability">Availability</span></th>
+          <th scope="col">
+            <span jhiTranslate="jhipsterSampleApplicationBisApp.securityInterview.applicationType">Application Type</span>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let securityInterview of securityInterviews; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/security-interview', securityInterview.id, 'view']">{{ securityInterview.id }}</a>
+          </td>
+          <td>{{ securityInterview.applicationName }}</td>
+          <td>{{ securityInterview.so }}</td>
+          <td jhiTranslate="{{ 'jhipsterSampleApplicationBisApp.Process.' + securityInterview.process }}">
+            {{ securityInterview.process }}
+          </td>
+          <td>
+            <div *ngIf="securityInterview.psat">
+              <a [routerLink]="['/psat', securityInterview.psat?.id, 'view']">{{ securityInterview.psat?.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="securityInterview.availability">
+              <a [routerLink]="['/availability', securityInterview.availability?.id, 'view']">{{ securityInterview.availability?.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="securityInterview.applicationType">
+              <a [routerLink]="['/application-type', securityInterview.applicationType?.id, 'view']">{{
+                securityInterview.applicationType?.id
+              }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/security-interview', securityInterview.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/security-interview', securityInterview.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(securityInterview)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

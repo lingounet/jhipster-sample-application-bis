@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity SecurityInterview.
+    -->
+    <changeSet id="20220524084043-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="psat_id"
+                                 baseTableName="security_interview"
+                                 constraintName="fk_security_interview__psat_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="psat"/>
+
+        <addForeignKeyConstraint baseColumnNames="availability_id"
+                                 baseTableName="security_interview"
+                                 constraintName="fk_security_interview__availability_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="availability"/>
+
+        <addForeignKeyConstraint baseColumnNames="application_type_id"
+                                 baseTableName="security_interview"
+                                 constraintName="fk_security_interview__application_type_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="application_type"/>
+    </changeSet>
+</databaseChangeLog>

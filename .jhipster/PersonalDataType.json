@@ -1,0 +1,33 @@
+{
+  "applications": "*",
+  "changelogDate": "20220524084038",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "personal_data_type",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "PersonalDataType",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "personalData",
+      "otherEntityRelationshipName": "personalDataType",
+      "relationshipName": "personalData",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "personalDataRegion",
+      "otherEntityRelationshipName": "personalDataType",
+      "relationshipName": "personalDataRegion",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

@@ -1,0 +1,27 @@
+{
+  "applications": "*",
+  "changelogDate": "20220524084037",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "personal_data_region",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "PersonalDataRegion",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "personalDataType",
+      "otherEntityRelationshipName": "personalDataRegion",
+      "relationshipName": "personalDataType",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

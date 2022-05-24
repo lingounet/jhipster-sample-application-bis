@@ -1,0 +1,68 @@
+{
+  "applications": "*",
+  "changelogDate": "20220524084047",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "availability",
+  "fields": [
+    {
+      "fieldName": "financial",
+      "fieldType": "Criticality",
+      "fieldValues": "LOW,MODERATE,HIGH,CRITICAL"
+    },
+    {
+      "fieldName": "legal",
+      "fieldType": "Criticality",
+      "fieldValues": "LOW,MODERATE,HIGH,CRITICAL"
+    },
+    {
+      "fieldName": "image",
+      "fieldType": "Criticality",
+      "fieldValues": "LOW,MODERATE,HIGH,CRITICAL"
+    },
+    {
+      "fieldName": "strategy",
+      "fieldType": "Criticality",
+      "fieldValues": "LOW,MODERATE,HIGH,CRITICAL"
+    },
+    {
+      "fieldName": "operational",
+      "fieldType": "Criticality",
+      "fieldValues": "LOW,MODERATE,HIGH,CRITICAL"
+    },
+    {
+      "fieldName": "traceability",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any"
+    },
+    {
+      "fieldName": "confidentiality",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any"
+    },
+    {
+      "fieldName": "integrity",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any"
+    },
+    {
+      "fieldName": "critical",
+      "fieldType": "Boolean"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Availability",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "securityInterview",
+      "otherEntityRelationshipName": "availability",
+      "ownerSide": false,
+      "relationshipName": "securityInterview",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

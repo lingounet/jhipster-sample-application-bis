@@ -1,0 +1,44 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="hosting">
+      <h2 data-cy="hostingDetailsHeading"><span jhiTranslate="jhipsterSampleApplicationBisApp.hosting.detail.title">Hosting</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ hosting.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationBisApp.hosting.date">Date</span></dt>
+        <dd>
+          <span>{{ hosting.date | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationBisApp.hosting.hostingPlaform">Hosting Plaform</span></dt>
+        <dd>
+          <div *ngIf="hosting.hostingPlaform">
+            <a [routerLink]="['/hosting-platform', hosting.hostingPlaform?.id, 'view']">{{ hosting.hostingPlaform?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationBisApp.hosting.securityInterview">Security Interview</span></dt>
+        <dd>
+          <div *ngIf="hosting.securityInterview">
+            <a [routerLink]="['/security-interview', hosting.securityInterview?.id, 'view']">{{ hosting.securityInterview?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/hosting', hosting.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

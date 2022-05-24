@@ -1,0 +1,51 @@
+{
+  "applications": "*",
+  "changelogDate": "20220524084048",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "complementary_question",
+  "fields": [
+    {
+      "fieldName": "internet",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "development",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "configuration",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "cloud",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "internal",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "partner",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "users",
+      "fieldType": "Integer"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "ComplementaryQuestion",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "securityInterview",
+      "otherEntityRelationshipName": "complementaryQuestion",
+      "relationshipName": "securityInterview",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}
