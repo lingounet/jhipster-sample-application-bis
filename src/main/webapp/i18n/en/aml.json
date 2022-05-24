@@ -1,0 +1,24 @@
+{
+  "jhipsterSampleApplicationBisApp": {
+    "aml": {
+      "home": {
+        "title": "Amls",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Aml",
+        "createOrEditLabel": "Create or edit a Aml",
+        "notFound": "No Amls found"
+      },
+      "created": "A new Aml is created with identifier {{ param }}",
+      "updated": "A Aml is updated with identifier {{ param }}",
+      "deleted": "A Aml is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Aml {{ id }}?"
+      },
+      "detail": {
+        "title": "Aml"
+      },
+      "id": "ID",
+      "name": "Name"
+    }
+  }
+}

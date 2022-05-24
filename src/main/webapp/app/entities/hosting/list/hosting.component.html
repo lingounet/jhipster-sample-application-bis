@@ -1,0 +1,90 @@
+<div>
+  <h2 id="page-heading" data-cy="HostingHeading">
+    <span jhiTranslate="jhipsterSampleApplicationBisApp.hosting.home.title">Hostings</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="jhipsterSampleApplicationBisApp.hosting.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-hosting"
+        [routerLink]="['/hosting/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="jhipsterSampleApplicationBisApp.hosting.home.createLabel"> Create a new Hosting </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="hostings?.length === 0">
+    <span jhiTranslate="jhipsterSampleApplicationBisApp.hosting.home.notFound">No hostings found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="hostings && hostings.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <th scope="col"><span jhiTranslate="global.field.id">ID</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationBisApp.hosting.date">Date</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationBisApp.hosting.hostingPlaform">Hosting Plaform</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationBisApp.hosting.identity">Identity</span></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let hosting of hostings; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/hosting', hosting.id, 'view']">{{ hosting.id }}</a>
+          </td>
+          <td>{{ hosting.date | formatMediumDatetime }}</td>
+          <td>
+            <div *ngIf="hosting.hostingPlaform">
+              <a [routerLink]="['/hosting-platform', hosting.hostingPlaform?.id, 'view']">{{ hosting.hostingPlaform?.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="hosting.identity">
+              <a [routerLink]="['/identity', hosting.identity?.id, 'view']">{{ hosting.identity?.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/hosting', hosting.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/hosting', hosting.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(hosting)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

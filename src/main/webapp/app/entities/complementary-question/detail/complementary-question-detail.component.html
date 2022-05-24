@@ -1,0 +1,64 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="complementaryQuestion">
+      <h2 data-cy="complementaryQuestionDetailsHeading">
+        <span jhiTranslate="jhipsterSampleApplicationBisApp.complementaryQuestion.detail.title">Complementary Question</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ complementaryQuestion.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationBisApp.complementaryQuestion.internet">Internet</span></dt>
+        <dd>
+          <span>{{ complementaryQuestion.internet }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationBisApp.complementaryQuestion.development">Development</span></dt>
+        <dd>
+          <span>{{ complementaryQuestion.development }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationBisApp.complementaryQuestion.configuration">Configuration</span></dt>
+        <dd>
+          <span>{{ complementaryQuestion.configuration }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationBisApp.complementaryQuestion.cloud">Cloud</span></dt>
+        <dd>
+          <span>{{ complementaryQuestion.cloud }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationBisApp.complementaryQuestion.internal">Internal</span></dt>
+        <dd>
+          <span>{{ complementaryQuestion.internal }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationBisApp.complementaryQuestion.partner">Partner</span></dt>
+        <dd>
+          <span>{{ complementaryQuestion.partner }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationBisApp.complementaryQuestion.users">Users</span></dt>
+        <dd>
+          <span>{{ complementaryQuestion.users }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationBisApp.complementaryQuestion.identity">Identity</span></dt>
+        <dd>
+          <div *ngIf="complementaryQuestion.identity">
+            <a [routerLink]="['/identity', complementaryQuestion.identity?.id, 'view']">{{ complementaryQuestion.identity?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/complementary-question', complementaryQuestion.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,82 @@
+{
+  "applications": "*",
+  "changelogDate": "20220524125425",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "identity",
+  "fields": [
+    {
+      "fieldName": "applicationName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "so",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "process",
+      "fieldType": "Process",
+      "fieldValues": "LIGHT,CLASSIC"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Identity",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "psat",
+      "otherEntityRelationshipName": "identity",
+      "ownerSide": true,
+      "relationshipName": "psat",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "availability",
+      "otherEntityRelationshipName": "identity",
+      "ownerSide": true,
+      "relationshipName": "availability",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "hosting",
+      "otherEntityRelationshipName": "identity",
+      "relationshipName": "hosting",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "personalData",
+      "otherEntityRelationshipName": "identity",
+      "relationshipName": "personalData",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "icrf",
+      "otherEntityRelationshipName": "identity",
+      "relationshipName": "icrf",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "sensitiveData",
+      "otherEntityRelationshipName": "identity",
+      "relationshipName": "sensitiveData",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "complementaryQuestion",
+      "otherEntityRelationshipName": "identity",
+      "relationshipName": "complementaryQuestion",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "applicationType",
+      "otherEntityRelationshipName": "identity",
+      "relationshipName": "applicationType",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

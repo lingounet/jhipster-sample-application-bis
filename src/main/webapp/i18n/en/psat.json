@@ -1,0 +1,27 @@
+{
+  "jhipsterSampleApplicationBisApp": {
+    "psat": {
+      "home": {
+        "title": "Psats",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Psat",
+        "createOrEditLabel": "Create or edit a Psat",
+        "notFound": "No Psats found"
+      },
+      "created": "A new Psat is created with identifier {{ param }}",
+      "updated": "A Psat is updated with identifier {{ param }}",
+      "deleted": "A Psat is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Psat {{ id }}?"
+      },
+      "detail": {
+        "title": "Psat"
+      },
+      "id": "ID",
+      "amlId": "Aml Id",
+      "owner": "Owner",
+      "status": "Status",
+      "identity": "Identity"
+    }
+  }
+}

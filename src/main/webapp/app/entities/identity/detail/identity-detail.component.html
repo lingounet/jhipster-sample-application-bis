@@ -1,0 +1,58 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="identity">
+      <h2 data-cy="identityDetailsHeading"><span jhiTranslate="jhipsterSampleApplicationBisApp.identity.detail.title">Identity</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ identity.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationBisApp.identity.applicationName">Application Name</span></dt>
+        <dd>
+          <span>{{ identity.applicationName }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationBisApp.identity.so">So</span></dt>
+        <dd>
+          <span>{{ identity.so }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationBisApp.identity.process">Process</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'jhipsterSampleApplicationBisApp.Process.' + identity.process }}">{{ identity.process }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationBisApp.identity.psat">Psat</span></dt>
+        <dd>
+          <div *ngIf="identity.psat">
+            <a [routerLink]="['/psat', identity.psat?.id, 'view']">{{ identity.psat?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationBisApp.identity.availability">Availability</span></dt>
+        <dd>
+          <div *ngIf="identity.availability">
+            <a [routerLink]="['/availability', identity.availability?.id, 'view']">{{ identity.availability?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationBisApp.identity.applicationType">Application Type</span></dt>
+        <dd>
+          <div *ngIf="identity.applicationType">
+            <a [routerLink]="['/application-type', identity.applicationType?.id, 'view']">{{ identity.applicationType?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/identity', identity.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

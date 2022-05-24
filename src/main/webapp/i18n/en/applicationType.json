@@ -1,0 +1,25 @@
+{
+  "jhipsterSampleApplicationBisApp": {
+    "applicationType": {
+      "home": {
+        "title": "Application Types",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Application Type",
+        "createOrEditLabel": "Create or edit a Application Type",
+        "notFound": "No Application Types found"
+      },
+      "created": "A new Application Type is created with identifier {{ param }}",
+      "updated": "A Application Type is updated with identifier {{ param }}",
+      "deleted": "A Application Type is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Application Type {{ id }}?"
+      },
+      "detail": {
+        "title": "Application Type"
+      },
+      "id": "ID",
+      "name": "Name",
+      "identity": "Identity"
+    }
+  }
+}

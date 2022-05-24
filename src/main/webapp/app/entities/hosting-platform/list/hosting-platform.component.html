@@ -1,0 +1,84 @@
+<div>
+  <h2 id="page-heading" data-cy="HostingPlatformHeading">
+    <span jhiTranslate="jhipsterSampleApplicationBisApp.hostingPlatform.home.title">Hosting Platforms</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="jhipsterSampleApplicationBisApp.hostingPlatform.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-hosting-platform"
+        [routerLink]="['/hosting-platform/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="jhipsterSampleApplicationBisApp.hostingPlatform.home.createLabel"> Create a new Hosting Platform </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="hostingPlatforms?.length === 0">
+    <span jhiTranslate="jhipsterSampleApplicationBisApp.hostingPlatform.home.notFound">No hostingPlatforms found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="hostingPlatforms && hostingPlatforms.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <th scope="col"><span jhiTranslate="global.field.id">ID</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationBisApp.hostingPlatform.name">Name</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationBisApp.hostingPlatform.hostingType">Hosting Type</span></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let hostingPlatform of hostingPlatforms; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/hosting-platform', hostingPlatform.id, 'view']">{{ hostingPlatform.id }}</a>
+          </td>
+          <td>{{ hostingPlatform.name }}</td>
+          <td>
+            <div *ngIf="hostingPlatform.hostingType">
+              <a [routerLink]="['/hosting-type', hostingPlatform.hostingType?.id, 'view']">{{ hostingPlatform.hostingType?.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/hosting-platform', hostingPlatform.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/hosting-platform', hostingPlatform.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(hostingPlatform)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

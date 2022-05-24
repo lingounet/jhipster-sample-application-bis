@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity PersonalDataType.
+    -->
+    <changeSet id="20220524125421-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="personal_data_region_id"
+                                 baseTableName="personal_data_type"
+                                 constraintName="fk_personal_data_type__personal_data_region_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="personal_data_region"/>
+    </changeSet>
+</databaseChangeLog>
