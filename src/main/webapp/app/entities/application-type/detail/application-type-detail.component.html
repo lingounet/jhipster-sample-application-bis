@@ -1,0 +1,42 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="applicationType">
+      <h2 data-cy="applicationTypeDetailsHeading">
+        <span jhiTranslate="jhipsterSampleApplicationBisApp.applicationType.detail.title">Application Type</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ applicationType.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationBisApp.applicationType.name">Name</span></dt>
+        <dd>
+          <span>{{ applicationType.name }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationBisApp.applicationType.securityInterview">Security Interview</span></dt>
+        <dd>
+          <div *ngIf="applicationType.securityInterview">
+            <a [routerLink]="['/security-interview', applicationType.securityInterview?.id, 'view']">{{
+              applicationType.securityInterview?.id
+            }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/application-type', applicationType.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

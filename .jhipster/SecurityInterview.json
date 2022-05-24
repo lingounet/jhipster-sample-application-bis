@@ -1,0 +1,83 @@
+{
+  "applications": "*",
+  "changelogDate": "20220524083323",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "security_interview",
+  "fields": [
+    {
+      "fieldName": "applicationName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "so",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "process",
+      "fieldType": "Process",
+      "fieldValues": "LIGHT,CLASSIC"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "SecurityInterview",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "psat",
+      "otherEntityRelationshipName": "securityInterview",
+      "ownerSide": true,
+      "relationshipName": "psat",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "availability",
+      "otherEntityRelationshipName": "securityInterview",
+      "ownerSide": true,
+      "relationshipName": "availability",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "hosting",
+      "otherEntityRelationshipName": "securityInterview",
+      "relationshipName": "hosting",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "personalData",
+      "otherEntityRelationshipName": "securityInterview",
+      "relationshipName": "personalData",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "icrf",
+      "otherEntityRelationshipName": "securityInterview",
+      "relationshipName": "icrf",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "sensitiveData",
+      "otherEntityRelationshipName": "securityInterview",
+      "relationshipName": "sensitiveData",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "complementaryQuestion",
+      "otherEntityRelationshipName": "securityInterview",
+      "relationshipName": "complementaryQuestion",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "applicationType",
+      "otherEntityRelationshipName": "securityInterview",
+      "ownerSide": false,
+      "relationshipName": "applicationType",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

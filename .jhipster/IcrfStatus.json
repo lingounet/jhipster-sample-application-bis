@@ -1,0 +1,28 @@
+{
+  "applications": "*",
+  "changelogDate": "20220524083319",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "icrf_status",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "IcrfStatus",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "icrf",
+      "otherEntityRelationshipName": "icrfStatus",
+      "ownerSide": false,
+      "relationshipName": "icrf",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

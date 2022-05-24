@@ -1,0 +1,40 @@
+{
+  "applications": "*",
+  "changelogDate": "20220524083322",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "psat",
+  "fields": [
+    {
+      "fieldName": "amlId",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "owner",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Status",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "DRAFT,SECURITY_INTERVIEW,RISK_ANALYSIS,COMPLIANCE_CHECK,DONE"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Psat",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "securityInterview",
+      "otherEntityRelationshipName": "psat",
+      "ownerSide": false,
+      "relationshipName": "securityInterview",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

@@ -1,0 +1,121 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-security-interview-heading"
+        data-cy="SecurityInterviewCreateUpdateHeading"
+        jhiTranslate="jhipsterSampleApplicationBisApp.securityInterview.home.createOrEditLabel"
+      >
+        Create or edit a Security Interview
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationBisApp.securityInterview.applicationName"
+            for="field_applicationName"
+            >Application Name</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="applicationName"
+            id="field_applicationName"
+            data-cy="applicationName"
+            formControlName="applicationName"
+          />
+          <div
+            *ngIf="
+              editForm.get('applicationName')!.invalid &&
+              (editForm.get('applicationName')!.dirty || editForm.get('applicationName')!.touched)
+            "
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('applicationName')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationBisApp.securityInterview.so" for="field_so">So</label>
+          <input type="text" class="form-control" name="so" id="field_so" data-cy="so" formControlName="so" />
+          <div *ngIf="editForm.get('so')!.invalid && (editForm.get('so')!.dirty || editForm.get('so')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('so')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationBisApp.securityInterview.process" for="field_process"
+            >Process</label
+          >
+          <select class="form-control" name="process" formControlName="process" id="field_process" data-cy="process">
+            <option [ngValue]="null">{{ 'jhipsterSampleApplicationBisApp.Process.null' | translate }}</option>
+            <option *ngFor="let process of processValues" [value]="process">
+              {{ 'jhipsterSampleApplicationBisApp.Process.' + process | translate }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationBisApp.securityInterview.psat" for="field_psat">Psat</label>
+          <select class="form-control" id="field_psat" data-cy="psat" name="psat" formControlName="psat">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="psatOption.id === editForm.get('psat')!.value?.id ? editForm.get('psat')!.value : psatOption"
+              *ngFor="let psatOption of psatsCollection; trackBy: trackPsatById"
+            >
+              {{ psatOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationBisApp.securityInterview.availability" for="field_availability"
+            >Availability</label
+          >
+          <select class="form-control" id="field_availability" data-cy="availability" name="availability" formControlName="availability">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                availabilityOption.id === editForm.get('availability')!.value?.id ? editForm.get('availability')!.value : availabilityOption
+              "
+              *ngFor="let availabilityOption of availabilitiesCollection; trackBy: trackAvailabilityById"
+            >
+              {{ availabilityOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

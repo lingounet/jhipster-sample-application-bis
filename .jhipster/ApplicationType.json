@@ -1,0 +1,28 @@
+{
+  "applications": "*",
+  "changelogDate": "20220524083314",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "application_type",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "ApplicationType",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "securityInterview",
+      "otherEntityRelationshipName": "applicationType",
+      "ownerSide": true,
+      "relationshipName": "securityInterview",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

@@ -1,0 +1,11 @@
+{
+  "jhipsterSampleApplicationBisApp": {
+    "Criticality": {
+      "null": "",
+      "LOW": "LOW",
+      "MODERATE": "MODERATE",
+      "HIGH": "HIGH",
+      "CRITICAL": "CRITICAL"
+    }
+  }
+}
