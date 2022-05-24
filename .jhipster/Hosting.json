@@ -1,0 +1,33 @@
+{
+  "applications": "*",
+  "changelogDate": "20220524083922",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "hosting",
+  "fields": [
+    {
+      "fieldName": "date",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Hosting",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "hostingPlatform",
+      "otherEntityRelationshipName": "hosting",
+      "relationshipName": "hostingPlaform",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "securityInterview",
+      "otherEntityRelationshipName": "hosting",
+      "relationshipName": "securityInterview",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

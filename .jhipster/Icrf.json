@@ -1,0 +1,38 @@
+{
+  "applications": "*",
+  "changelogDate": "20220524083918",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "icrf",
+  "fields": [
+    {
+      "fieldName": "code",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Icrf",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "icrfStatus",
+      "otherEntityRelationshipName": "icrf",
+      "ownerSide": true,
+      "relationshipName": "icrfStatus",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "securityInterview",
+      "otherEntityRelationshipName": "icrf",
+      "relationshipName": "securityInterview",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}
